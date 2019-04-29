@@ -11,8 +11,8 @@ namespace AzureADTokenGenerator
     {
         static void Main(string[] args)
         {
-            //var clientCredential = new ClientCredential("Your Azure AD Application ID", "Azure AD Application secret key");            
-            //var authenticationContext = new AuthenticationContext("https://login.microsoftonline.com/YourAzureADTenantID");
+            var clientCredential = new ClientCredential("Your Azure AD Application ID", "Azure AD Application secret key");            
+            var authenticationContext = new AuthenticationContext("https://login.microsoftonline.com/YourAzureADTenantID");
             var result = authenticationContext.AcquireTokenAsync("https://management.azure.com/", clientCredential).Result;
 
             if (result == null)
